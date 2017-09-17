@@ -1,9 +1,10 @@
 import os
 
-# Get Current directory
+# Setup
 cwd = os.getcwd()
 ignore = ["Source", "src", "bin", "Builds", "build", "lib",
             "Library", "target", "project"]
+
 
 def directory_stack(current_dir, stack, indent):
     if(os.path.isdir(current_dir)):
@@ -18,24 +19,8 @@ def directory_stack(current_dir, stack, indent):
             # Recursive call to next level
             directory_stack(next_dir, stack, indent)
 
-    # Return output string
-
-
-# def build_output(indent, current_string, new_item):
-#     current_string += indent + " | "
-#     current_string += new_item + "\n"
-#     return current_string
-
 
 # Get list of children
 dir_stack = []
 
 directory_stack(cwd, dir_stack, "")
-
-
-
-# Put them in stack
-
-# Vist each child and add their children to stack
-
-# Print out the children when you hit bottom
